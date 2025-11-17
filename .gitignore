@@ -1,0 +1,30 @@
+# Logs
+*.log
+
+# Dependency directories
+node_modules
+
+# Cache directories
+.npm
+.data
+
+# Build artifacts
+dist
+
+# Misc
+*.DS_Store
+.vscode
+.idea
+
+# Yarn
+**/.yarn/*
+!.yarn/releases/
+
+# Nx
+.nx
+
+# Generated files
+**/generated.ts
+
+# Jest
+coverage

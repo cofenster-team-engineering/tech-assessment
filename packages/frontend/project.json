@@ -1,0 +1,46 @@
+{
+  "name": "@cofenster/frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/frontend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "webpack",
+        "cwd": "packages/frontend"
+      },
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["graphql-codegen --watch --config codegen.yml", "webpack serve"],
+        "parallel": true,
+        "cwd": "packages/frontend"
+      },
+      "continuous": true
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p tsconfig.json && biome lint --diagnostic-level=error --no-errors-on-unmatched ./**/*.{ts,tsx,gql}",
+        "cwd": "packages/frontend"
+      }
+    },
+    "lint:fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "biome check --write --unsafe ./**/*.{ts,tsx,gql}",
+        "cwd": "packages/frontend"
+      }
+    },
+    "generate:graphql": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "graphql-codegen --config codegen.yml",
+        "cwd": "packages/frontend"
+      }
+    }
+  }
+}

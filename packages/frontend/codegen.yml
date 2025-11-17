@@ -1,0 +1,18 @@
+overwrite: true
+schema:
+  - "../backend/src/**/*.gql"
+documents: "./src/api/**/*.gql"
+config:
+  skipGraphQLImport: true
+
+generates:
+  src/api/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+      withComponent: false
+      withHOC: false
+      enumsAsTypes: true

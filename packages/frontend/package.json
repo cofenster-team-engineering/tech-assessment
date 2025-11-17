@@ -1,0 +1,40 @@
+{
+  "name": "@cofenster/frontend",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@apollo/client": "3.14.0",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
+    "graphql": "16.12.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.28.5",
+    "@babel/preset-env": "7.28.5",
+    "@babel/preset-react": "7.28.5",
+    "@babel/preset-typescript": "7.28.5",
+    "@biomejs/biome": "2.3.5",
+    "@graphql-codegen/cli": "6.0.2",
+    "@graphql-codegen/typescript": "5.0.3",
+    "@graphql-codegen/typescript-operations": "5.0.3",
+    "@graphql-codegen/typescript-react-apollo": "4.3.3",
+    "@parcel/watcher": "2.5.1",
+    "@types/babel__core": "7.20.5",
+    "@types/babel__preset-env": "7.10.0",
+    "@types/react": "19.0.6",
+    "@types/react-dom": "19.0.2",
+    "babel-loader": "10.0.0",
+    "concurrently": "9.2.1",
+    "html-webpack-plugin": "5.6.4",
+    "install": "0.13.0",
+    "typescript": "5.9.3",
+    "webpack": "5.102.1",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.2"
+  }
+}

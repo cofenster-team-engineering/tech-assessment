@@ -1,0 +1,8 @@
+input UpdateProjectInput {
+  name: String
+  isFavorite: Boolean
+}
+
+extend type Mutation {
+  updateProject(id: ID!, input: UpdateProjectInput!): Project!
+}

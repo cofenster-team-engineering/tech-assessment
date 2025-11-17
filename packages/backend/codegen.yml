@@ -1,0 +1,17 @@
+overwrite: true
+schema: "./src/**/*.gql"
+config:
+  skipGraphQLImport: true
+
+generates:
+  src/schema/generated.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+    config:
+      allowParentTypeOverride: true
+      enumsAsTypes: true
+      showUnusedMappers: true
+      mappers:
+        User: ../codegenTypes#UserEntity
+        Project: ../codegenTypes#ProjectEntity

@@ -1,0 +1,12 @@
+query SearchProjects($searchTerm: String!) {
+  searchProjects(searchTerm: $searchTerm) {
+    id
+    name
+    isFavorite
+    creator {
+      id
+      firstname
+      lastname
+    }
+  }
+}

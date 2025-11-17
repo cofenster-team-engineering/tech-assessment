@@ -1,0 +1,57 @@
+{
+  "name": "@cofenster/backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "commands": ["babel src --out-dir dist --copy-files --extensions \".ts\""],
+        "parallel": false
+      },
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "commands": [
+          "graphql-codegen --watch --config codegen.yml",
+          "babel src --out-dir dist --copy-files --extensions \".ts\" --watch",
+          "node --watch --watch-preserve-output --watch-path=dist dist/index.js"
+        ]
+      },
+      "continuous": true
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "command": "tsc --noEmit -p tsconfig.json && biome lint --diagnostic-level=error --no-errors-on-unmatched ./**/*.{ts,gql}"
+      }
+    },
+    "lint:fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "command": "biome check --write --unsafe ./**/*.{ts,gql}"
+      }
+    },
+    "test:unit": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "command": "NODE_OPTIONS=--no-experimental-strip-types jest --coverage --passWithNoTests"
+      }
+    },
+    "generate:graphql": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "command": "graphql-codegen --config codegen.yml"
+      }
+    }
+  }
+}

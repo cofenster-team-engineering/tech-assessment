@@ -1,0 +1,25 @@
+{
+  "name": "cofenster",
+  "private": true,
+  "version": "1.0.0",
+  "description": "cofenster Tech Assessment",
+  "packageManager": "yarn@4.11.0",
+  "engines": {
+    "node": "22"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "nx run-many -t dev",
+    "lint": "nx run-many -t lint",
+    "lint:fix": "nx run-many -t lint:fix",
+    "build": "nx run-many -t build",
+    "test:unit": "nx run-many -t test:unit",
+    "generate:graphql": "nx run-many -t generate:graphql",
+    "postinstall": "yarn generate:graphql && yarn build"
+  },
+  "devDependencies": {
+    "nx": "21.6.8"
+  }
+}

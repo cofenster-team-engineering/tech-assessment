@@ -1,0 +1,13 @@
+# import './project/type.gql'
+# import './project/mutation.gql'
+# import './project/query.gql'
+
+# import './user/type.gql'
+
+type Query {
+  _version: String
+}
+
+type Mutation {
+  _version: String
+}
