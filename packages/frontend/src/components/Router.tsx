@@ -1,20 +1,20 @@
 import { createContext, type FC, type PropsWithChildren } from 'react';
 
 export type RouterContextValue = {
-  currentPage: string | null;
+  currentPath: string | null;
   navigateTo: (route: string) => void;
 };
 
-export const RouterContext = createContext<RouterContextValue>({ currentPage: null, navigateTo: () => null });
+export const RouterContext = createContext<RouterContextValue>({ currentPath: null, navigateTo: () => null });
 
-export const useCurrentRoute = () => {
+export const useCurrentPath = () => {
   // To be implemented
-  return 'current route';
+  return 'current path';
 };
 
 export const useNavigateTo = () => {
   // To be implemented
-  return (route:string) => console.log(`Navigate to ${route}`);
+  return (path:string) => console.log(`Navigate to ${path}`);
 };
 
 export const Router: FC<PropsWithChildren> = ({ children }) => {
@@ -23,14 +23,14 @@ export const Router: FC<PropsWithChildren> = ({ children }) => {
   return children;
 };
 
-export const Route: FC<PropsWithChildren<{ route: string }>> = ({ route, children }) => {
+export const Route: FC<PropsWithChildren<{ path: string }>> = ({ path, children }) => {
   // To be implemented
 
-  return <p>Route not implemented ({route})</p>;
+  return <p>Route not implemented ({path})</p>;
 };
 
-export const RouterLink: FC<PropsWithChildren<{ route: string }>> = ({ route, children }) => {
+export const RouterLink: FC<PropsWithChildren<{ path: string }>> = ({ path, children }) => {
   // To be implemented
 
-  return <a href={route}>{children}</a>;
+  return <a href={path}>{children}</a>;
 };

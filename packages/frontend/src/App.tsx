@@ -12,11 +12,11 @@ export const App: React.FC = () => {
       <GlobalStyles />
 
       <Router>
-        <Route route="/">
+        <Route path="/">
           <Home />
         </Route>
 
-        <Route route="/projects">
+        <Route path="/projects">
           <Projects />
         </Route>
       </Router>
